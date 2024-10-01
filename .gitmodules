@@ -1,0 +1,3 @@
+[submodule "Babylonia-terminal"]
+	path = Babylonia-terminal
+	url = git@github.com:ALEZ-DEV/Babylonia-terminal.git
