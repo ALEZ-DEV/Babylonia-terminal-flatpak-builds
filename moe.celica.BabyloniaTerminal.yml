@@ -19,18 +19,14 @@ modules:
     only-arches:
       - x86_64
     build-commands:
-      #- "./build-flatpak.sh"
       - set -e
       - set -x
-      - projectName=Babylonia-terminal
-      - projectId=moe.celica.BabyloniaTerminal
-      - executableName=babylonia_terminal_launcher
-      - mkdir -p Babylonia-terminal
-      - tar -xf Babylonia-terminal.tar.gz -C Babylonia-terminal
-      - cp -r Babylonia-terminal /app/
-      - chmod +x /app/Babylonia-terminal/babylonia_terminal_launcher
+      - mkdir -p babylonia-terminal
+      - tar -xf babylonia-terminal.tar.gz -C babylonia-terminal
+      - cp -r babylonia-terminal /app/
+      - chmod +x /app/babylonia-terminal/babylonia_terminal_launcher
       - mkdir -p /app/bin
-      - ln -s /app/Babylonia-terminal/babylonia_terminal_launcher /app/bin/babylonia_terminal_launcher
+      - ln -s /app/babylonia-terminal/babylonia_terminal_launcher /app/bin/babylonia_terminal_launcher
         #- iconDir=/app/share/icons/hicolor/scalable/apps
         #- mkdir -p $iconDir
         #- cp -r assets/icons/$projectId.svg $iconDir/
@@ -41,11 +37,20 @@ modules:
         #- mkdir -p $metadataDir
         #- cp -r packaging/linux/$projectId.metainfo.xml $metadataDir/
     sources:
-      - type: file
-        url: file:///home/test/project/Babylonia-terminal/babylonia_terminal_launcher/Babylonia-terminal.tar.gz
-        sha256: 5a112c509432aa116373f5748ed479032027e692bb4aaae92e04acc047a14842
-      - type: file
-        path: build-flatpak.sh
+      - type: dir 
+        path: .
+
+  - name: libdrm
+    buildsystem: meson
+    config-opts:
+    - -Dinstall-test-programs=true
+    - -Dcairo-tests=disabled
+    - -Detnaviv=disabled
+    sources:
+    - type: git
+      url: https://gitlab.freedesktop.org/mesa/drm.git
+      tag: libdrm-2.4.123
+
 
   - name: libass
     cleanup:
