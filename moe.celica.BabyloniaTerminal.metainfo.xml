@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>moe.celica.BabyloniaTerminal</id>
+  
+  <name>Babylonia Terminal</name>
+  <summary>A launcher to play a certain anime game on linux</summary>
+  
+  <metadata_license>MIT</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>gamepad</control>
+  </supports>
+  
+  <description>
+    <p>
+      ### This launcher download, install your favorite anime game and it&apos;s dependencies for you! For now, there is only a cli version of the launcher, but a gui one is on my radar, so stay tuned!   If you have any issue with the launcher, don&apos;t hesitate to open an [issue](https://github.com/ALEZ-DEV/Babylonia-terminal/issues)!
+    </p>
+    <p>
+      ## Requirement
+    </p>
+    <p>
+      Please install Rust from the [official website](https://www.rust-lang.org/fr/tools/install)   You need [python3](https://www.python.org/downloads/) installed on your system, but all major distro have it installed by default   You need Wintricks to be installed to install the fonts and the dependencies for the game, you can install it via your package manager or your store   You need Steam to be installed to run the game
+    </p>
+    <p>
+      ## Launch options
+    </p>
+    <p>
+      If you want to wrap mangohud, gamescope, gamemoderun or any other process over the game, you can&apos;t just wrap the launcher for the wrapper to work, example : <code>mangohud babylonia-terminal-cli</code>.   The launcher has a parameter you can use to pass special launch options, you can pass options like this :
+    </p>
+    <p>
+      <code>
+      </code>
+      <code>bash # %command% will be replaced by the actual command that Babylonia-terminal will generate babylonia-terminal-cli --options &quot;&lt;custom launch command&gt; %command%&quot; </code>
+      <code>
+      </code>
+    </p>
+    <p>
+      So for example, if I want to wrap the game with mangohud :
+    </p>
+    <p>
+      <code>
+      </code>
+      <code>bash babylonia-terminal-cli --options &quot;mangohud %command%&quot; </code>
+      <code>
+      </code>
+    </p>
+    <p>
+      But start the game with the <code>--options</code> parameter every time is a bit annoying, so you can just run the command with <code>--set-options</code> instead the first time you want to setup the launch options :
+    </p>
+    <p>
+      <code>
+      </code>
+      <code>bash babylonia-terminal-cli --set-options &quot;mangohud %command%&quot; </code>
+      <code>
+      </code>
+    </p>
+    <p>
+      and the next time you want to start the launcher, you will just need to start it with <code>babylonia-terminal-cli</code>
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">moe.celica.BabyloniaTerminal.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/ALEZ-DEV/Babylonia-terminal/refs/heads/master/docs/Screenshot1.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/ALEZ-DEV/Babylonia-terminal/refs/heads/master/docs/Screenshot2.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/ALEZ-DEV/Babylonia-terminal/refs/heads/master/docs/Screenshot3.png</image>
+    </screenshot>
+  </screenshots>
+</component>
