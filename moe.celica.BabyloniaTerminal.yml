@@ -1,6 +1,6 @@
 id: moe.celica.BabyloniaTerminal
 runtime: org.freedesktop.Platform
-runtime-version: 22.08
+runtime-version: "24.08"
 sdk: org.freedesktop.Sdk
 command: babylonia_terminal_launcher
 separate-locales: false
@@ -39,18 +39,6 @@ modules:
     sources:
       - type: dir 
         path: .
-
-  - name: libdrm
-    buildsystem: meson
-    config-opts:
-    - -Dinstall-test-programs=true
-    - -Dcairo-tests=disabled
-    - -Detnaviv=disabled
-    sources:
-    - type: git
-      url: https://gitlab.freedesktop.org/mesa/drm.git
-      tag: libdrm-2.4.123
-
 
   - name: libass
     cleanup:
