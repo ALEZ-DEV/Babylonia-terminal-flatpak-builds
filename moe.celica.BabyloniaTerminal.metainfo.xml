@@ -13,6 +13,10 @@
     <control>keyboard</control>
     <control>gamepad</control>
   </supports>
+
+  <categories>
+    <category>Game</category>
+  </categories>
   
   <description>
     <p>
