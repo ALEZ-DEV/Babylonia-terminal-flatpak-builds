@@ -27,15 +27,12 @@ modules:
       - chmod +x /app/babylonia-terminal/babylonia_terminal_launcher
       - mkdir -p /app/bin
       - ln -s /app/babylonia-terminal/babylonia_terminal_launcher /app/bin/babylonia_terminal_launcher
-        #- iconDir=/app/share/icons/hicolor/scalable/apps
-        #- mkdir -p $iconDir
-        #- cp -r assets/icons/$projectId.svg $iconDir/
-        #- desktopFileDir=/app/share/applications
-        #- mkdir -p $desktopFileDir
-        #- cp -r packaging/linux/$projectId.desktop $desktopFileDir/
-        #- metadataDir=/app/share/metainfo
-        #- mkdir -p $metadataDir
-        #- cp -r packaging/linux/$projectId.metainfo.xml $metadataDir/
+      - mkdir -p /app/share/metainfo
+      - cp -r moe.celica.BabyloniaTerminal.metainfo.xml /app/share/metainfo/
+      - mkdir -p /app/share/icons/hicolor/512x512/apps
+      - cp -r moe.celica.BabyloniaTerminal.png /app/share/icons/hicolor/512x512/apps/
+      - mkdir -p /app/share/applications
+      - cp -r moe.celica.BabyloniaTerminal.desktop /app/share/applications/
     sources:
       - type: dir 
         path: .
