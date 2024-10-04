@@ -13,6 +13,9 @@ jobs:
   flatpak:
     name: "Flatpak"
     runs-on: ubuntu-24.04
+    container:
+      image: ubuntu:24.04
+      options: --privileged
     steps:
     - uses: actions/checkout@v3
     - name: Install Deps and Setup environment
