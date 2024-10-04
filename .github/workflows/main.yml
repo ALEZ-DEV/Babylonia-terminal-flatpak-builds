@@ -31,7 +31,7 @@ jobs:
         submodules: true
     - uses: flutter-actions/setup-flutter@v2
     - name: "Compile"
-      run: build-launcher-archive.sh
+      run: ./build-launcher-archive.sh
     - uses: flatpak/flatpak-github-actions/flatpak-builder@v5
       name: "Build"
       with:
