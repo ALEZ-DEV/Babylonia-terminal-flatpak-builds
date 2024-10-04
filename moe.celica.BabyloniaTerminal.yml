@@ -40,11 +40,10 @@ modules:
   - name: winetricks
     buildsystem: simple
     build-commands:
-      - make install
+      - cp -r winetricks /app/bin/
     sources:
-    - type: git
-      url: https://github.com/Winetricks/winetricks.git
-      tag: "20240105"
+    - type: file
+      url: https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
 
   - name: libass
     cleanup:
