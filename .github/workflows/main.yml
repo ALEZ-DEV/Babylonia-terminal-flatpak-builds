@@ -25,6 +25,7 @@ jobs:
         sudo wget https://raw.githubusercontent.com/flatpak/flat-manager/f6ef84fc39659065c7323e7680adff20add9068a/flat-manager-client -O /usr/bin/flat-manager-client
         sudo chmod +x /usr/bin/flat-manager-client
         sudo chmod +x ./build-launcher-archive.sh
+        sudo chmod +x ./download_and_compile_cabextract.sh
         ./download_and_compile_cabextract.sh
         git config --global protocol.file.allow always
     - uses: actions/checkout@v3
