@@ -10,9 +10,11 @@ finish-args:
   - --device=dri
   - --socket=fallback-x11
   - --socket=wayland
+  - --socket=pulseaudio
   - --filesystem=host
   - --filesystem=/usr/local/share/ca-certificates
   - --env=LD_LIBRARY_PATH=/app/lib
+  - --allow=devel
 modules:
   - name: babylonia-terminal
     buildsystem: simple
