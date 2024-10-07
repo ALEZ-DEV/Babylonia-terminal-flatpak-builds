@@ -126,8 +126,8 @@ modules:
     sources:
     - type: git
       url: https://git.ffmpeg.org/ffmpeg.git
-      branch: release/6.0
-      commit: 35f906521eb42e922ac568264f2d29f93dc7f618
+      tag: n6.1.2
+      #branch: release/6.0 
 
   - name: libmpv
     cleanup:
