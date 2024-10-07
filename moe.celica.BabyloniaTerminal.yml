@@ -53,7 +53,7 @@ modules:
     build-commands:
       - tar -zxf cabextract-1.11.tar.gz
       - cd cabextract-1.11
-      - ./configure
+      - sh ./configure
       - make
     sources:
     - type: file
