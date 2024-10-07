@@ -51,14 +51,10 @@ modules:
   - name: cabextract # needed to install the fonts
     buildsystem: simple
     build-commands:
-      - tar -zxf cabextract-1.11.tar.gz
-      - cd cabextract-1.11
-      - sh ./configure
-      - make
+      - make install
     sources:
-    - type: file
-      url: https://www.cabextract.org.uk/cabextract-1.11.tar.gz
-      sha256: b5546db1155e4c718ff3d4b278573604f30dd64c3c5bfd4657cd089b823a3ac6
+    - type: dir
+      path: ./cabextract
 
   - name: libass
     cleanup:
