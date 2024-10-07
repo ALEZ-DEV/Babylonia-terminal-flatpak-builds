@@ -48,6 +48,17 @@ modules:
       url: https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
       sha256: 427bfeae8de5f4a45ee2680b6a8bf7f4bc4e79299a682181ca8a0fdef80bf5c6
 
+  - name: cabextract # needed to install the fonts
+    buildsystem: simple
+      - tar -zxf cabextract-1.11.tar.gz
+      - cd cabextract-1.11
+      - ./configure
+      - make
+    sources:
+    - type: file
+      url: https://www.cabextract.org.uk/cabextract-1.11.tar.gz
+      sha256: b5546db1155e4c718ff3d4b278573604f30dd64c3c5bfd4657cd089b823a3ac6
+
   - name: libass
     cleanup:
     - /include
