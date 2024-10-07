@@ -54,7 +54,7 @@ modules:
       - make install
     sources:
     - type: dir
-      path: ./cabextract
+      path: ./cabextract/
 
   - name: libass
     cleanup:
