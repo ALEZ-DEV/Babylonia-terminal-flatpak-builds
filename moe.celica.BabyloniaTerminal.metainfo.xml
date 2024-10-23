@@ -17,6 +17,14 @@
   <categories>
     <category>Game</category>
   </categories>
+
+  <releases>
+    <release version="0.1.1" date="2024-10-23">
+      <description>
+        <p>Add release notice</p>
+      </description>
+    </release>
+  </releases>
   
   <description>
     <p>
