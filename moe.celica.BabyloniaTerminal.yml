@@ -13,6 +13,7 @@ finish-args:
   - --socket=pulseaudio
   - --filesystem=host
   - --env=LD_LIBRARY_PATH=/app/lib
+  - --env=PATH=$PATH:/usr/lib/extensions/vulkan/gamescope/bin
   - --allow=devel
 modules:
   - name: babylonia-terminal
