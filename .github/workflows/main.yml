@@ -6,7 +6,6 @@ on:
       - 'main'
     paths:
       - 'moe.celica.BabyloniaTerminal.yml'
-      
   workflow_dispatch:
 
 jobs:
@@ -19,20 +18,19 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y curl git unzip xz-utils zip libglu1-mesa clang cmake git ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev python3-aiohttp python3-tenacity flatpak flatpak-builder libssl-dev wget libmpv-dev ostree libostree-dev
-        cargo install rinf
         sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
         sudo flatpak install org.freedesktop.Sdk//24.08 org.freedesktop.Platform//24.08 -y
         sudo wget https://raw.githubusercontent.com/flatpak/flat-manager/f6ef84fc39659065c7323e7680adff20add9068a/flat-manager-client -O /usr/bin/flat-manager-client
         sudo chmod +x /usr/bin/flat-manager-client
         sudo chmod +x ./build-launcher-archive.sh
         git config --global protocol.file.allow always
-    - uses: actions/checkout@v3
+    #- uses: flutter-actions/setup-flutter@v2
+    #- name: "Compile"
+    #  run: ./build-launcher-archive.sh
+    - uses: actions/checkout@v4
       with:
         ref: main
         submodules: true
-    - uses: flutter-actions/setup-flutter@v2
-    - name: "Compile"
-      run: ./build-launcher-archive.sh
     - uses: flatpak/flatpak-github-actions/flatpak-builder@v5
       name: "Build"
       with:
@@ -40,9 +38,9 @@ jobs:
         build-bundle: false
         manifest-path: moe.celica.BabyloniaTerminal.yml
         cache-key: flatpak-builder-${{ github.sha }}
-    - uses: flatpak/flatpak-github-actions/flat-manager@v5
-      name: "Deploy"
-      with:
-        repository: stable
-        flat-manager-url: ${{ secrets.REPO_URL }}
-        token: ${{ secrets.REPO_TOKEN }}
+    #- uses: flatpak/flatpak-github-actions/flat-manager@v5
+    #  name: "Deploy"
+    #  with:
+    #    repository: stable
+    #    flat-manager-url: ${{ secrets.REPO_URL }}
+    #    token: ${{ secrets.REPO_TOKEN }}

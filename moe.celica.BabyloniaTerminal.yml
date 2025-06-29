@@ -18,17 +18,26 @@ finish-args:
 modules:
   - name: babylonia-terminal
     buildsystem: simple
+    build-options:
+      env:
+        CARGO_HOME: ./cargo
+    build-commands:
+      - cargo --offline fetch --manifest-path Cargo.toml --verbose
+      - cargo --offline build --release --verbose
+
+      - cp target/release/babylonia-terminal /app/bin/babylonia-terminal
+    sources:
+      - type: git
+        url: https://github.com/ALEZ-DEV/Babylonia-terminal
+      - cargo-sources.json
+
+  - name: metadata
+    buildsystem: simple
     only-arches:
       - x86_64
     build-commands:
       - set -e
       - set -x
-      - mkdir -p babylonia-terminal
-      - tar -xf babylonia-terminal.tar.gz -C babylonia-terminal
-      - cp -r babylonia-terminal /app/
-      - chmod +x /app/babylonia-terminal/babylonia_terminal_launcher
-      - mkdir -p /app/bin
-      - ln -s /app/babylonia-terminal/babylonia_terminal_launcher /app/bin/babylonia_terminal_launcher
       - mkdir -p /app/share/metainfo
       - cp -r moe.celica.BabyloniaTerminal.metainfo.xml /app/share/metainfo/
       - mkdir -p /app/share/icons/hicolor/512x512/apps
@@ -38,7 +47,7 @@ modules:
     sources:
       - type: dir 
         path: .
-        
+
   - name: winetricks
     buildsystem: simple
     build-commands:
@@ -46,7 +55,7 @@ modules:
     sources:
     - type: file
       url: https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
-      sha256: f1ee5af4e2e6daa5d3d72fe7ad2d18d500d311f8e8376f91e65206815e5c2f2e
+      sha256: cad07aa4609655d3197b044549a9bb5498d9fd43a6f9b22c6927e18c4f3f669e
 
   - name: cabextract # needed to install the fonts
     buildsystem: simple

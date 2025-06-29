@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Babylonia Terminal
-Exec=babylonia_terminal_launcher
+Exec=babylonia-terminal --gui
 Type=Application
 Icon=moe.celica.BabyloniaTerminal
 
