@@ -1,3 +1,6 @@
 [submodule "Babylonia-terminal"]
 	path = Babylonia-terminal
 	url = https://github.com/ALEZ-DEV/Babylonia-terminal.git
+[submodule "flatpak-builder-tools"]
+	path = flatpak-builder-tools
+	url = https://github.com/flatpak/flatpak-builder-tools.git
