@@ -2,6 +2,8 @@ id: moe.celica.BabyloniaTerminal
 runtime: org.freedesktop.Platform
 runtime-version: "24.08"
 sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.rust-stable
 command: babylonia_terminal_launcher
 separate-locales: false
 finish-args:
