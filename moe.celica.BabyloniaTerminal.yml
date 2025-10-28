@@ -4,7 +4,7 @@ runtime-version: "47"
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
-command: babylonia-terminal
+command: babylonia-terminal --gui
 separate-locales: false
 finish-args:
   - --share=network
