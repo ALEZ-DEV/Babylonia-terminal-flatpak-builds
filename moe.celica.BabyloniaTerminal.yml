@@ -9,27 +9,30 @@ separate-locales: false
 finish-args:
   - --share=network
   - --share=ipc
-  - --device=all
   - --socket=x11
   - --socket=wayland
   - --socket=pulseaudio
-  - --filesystem=host
-  - --env=LD_LIBRARY_PATH=/app/lib
-  #- --env=PATH=$PATH:/usr/lib/extensions/vulkan/gamescope/bin
+  - --filesystem=/mnt
+  - --filesystem=/media
+  - --filesystem=/run/media
+  - --talk-name=org.freedesktop.Notifications
+  - --device=all
   - --allow=devel
-  
+
+build-options:
+  append-path: /usr/lib/sdk/rust-stable/bin
+
 modules:
   - name: babylonia-terminal
     buildsystem: simple
     build-options:
-      #append-path: /usr/lib/sdk/rust-stable/bin
       env:
         CARGO_HOME: ./cargo
     build-commands:
-      - /usr/lib/sdk/rust-stable/bin/cargo --offline fetch --manifest-path Cargo.toml --verbose
-      - /usr/lib/sdk/rust-stable/bin/cargo --offline build --release --verbose
+      - cargo --offline fetch --manifest-path Cargo.toml --verbose
+      - cargo --offline build --release --verbose
 
-      - cp /run/build/babylonia-terminal/target/release/babylonia-terminal /app/bin/babylonia-terminal
+      - cp target/release/babylonia-terminal /app/bin/babylonia-terminal
     sources:
       - type: git
         url: https://github.com/ALEZ-DEV/Babylonia-terminal
