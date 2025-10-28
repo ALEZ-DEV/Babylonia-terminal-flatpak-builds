@@ -29,7 +29,7 @@ modules:
       - cargo --offline fetch --manifest-path Cargo.toml --verbose
       - cargo --offline build --release --verbose
 
-      - cp target/release/babylonia-terminal /app/bin/babylonia-terminal
+      - cp ./target/release/babylonia-terminal /app/bin/babylonia-terminal
     sources:
       - type: git
         url: https://github.com/ALEZ-DEV/Babylonia-terminal
