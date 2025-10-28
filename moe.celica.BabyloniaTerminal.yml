@@ -17,12 +17,13 @@ finish-args:
   - --env=LD_LIBRARY_PATH=/app/lib
   #- --env=PATH=$PATH:/usr/lib/extensions/vulkan/gamescope/bin
   - --allow=devel
+  - --env=PATH=$PATH:/app/bin
 modules:
   - name: babylonia-terminal
     buildsystem: simple
-    build-options:
-      env:
-        CARGO_HOME: ./cargo
+    #build-options:
+    #  env:
+    #    CARGO_HOME: ./cargo
     build-commands:
       - cargo --offline fetch --manifest-path Cargo.toml --verbose
       - cargo --offline build --release --verbose
