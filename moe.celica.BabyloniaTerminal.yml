@@ -63,7 +63,7 @@ modules:
     sources:
     - type: file
       url: https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
-      sha256: bcc23ee960413bc74ef6599ba8e35f9d0531e7256bbeb599a61ea40f5be71c39
+      sha256: ae6f98e9fe58410f7103e7a3142d988ee114a76d842d16029c0884be4e0523e4
 
   - name: cabextract # needed to install the fonts
     buildsystem: simple
