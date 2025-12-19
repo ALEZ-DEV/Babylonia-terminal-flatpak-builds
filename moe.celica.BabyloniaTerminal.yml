@@ -51,7 +51,7 @@ modules:
       - cp -r moe.celica.BabyloniaTerminal.png /app/share/icons/hicolor/512x512/apps/
       - mkdir -p /app/share/applications
       - cp -r moe.celica.BabyloniaTerminal.desktop /app/share/applications/
-      - cp -r start-launcher /app/bin/
+      - cp -r start-launcher.sh /app/bin/
     sources:
       - type: dir 
         path: .
