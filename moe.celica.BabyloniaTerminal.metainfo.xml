@@ -7,6 +7,10 @@
   
   <metadata_license>MIT</metadata_license>
   <project_license>GPL-3.0-only</project_license>
+
+  <releases>
+    <release version="0.1.2" date="2025-19-12"/>
+  </releases>
   
   <supports>
     <control>pointing</control>
