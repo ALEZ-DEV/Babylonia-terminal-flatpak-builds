@@ -4,7 +4,7 @@ runtime-version: "47"
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
-command: babylonia-terminal --gui
+command: /app/bin/start-launcher.sh
 separate-locales: false
 finish-args:
   - --share=network
@@ -51,6 +51,7 @@ modules:
       - cp -r moe.celica.BabyloniaTerminal.png /app/share/icons/hicolor/512x512/apps/
       - mkdir -p /app/share/applications
       - cp -r moe.celica.BabyloniaTerminal.desktop /app/share/applications/
+      - cp -r start-launcher /app/bin/
     sources:
       - type: dir 
         path: .
